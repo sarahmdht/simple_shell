@@ -77,24 +77,24 @@ return (_strlen(p));
 return (r);
 }
 /**
- * read_buf - read  buffer
+ * read_buf - reads a buffer
  * @info: parameter struct
  * @buf: buffer
- * @s: size
+ * @i: size
  * Return: r
  */
-ssize_t read_buf(info_t *info, char *buf, size_t *s)
+ssize_t read_buf(info_t *info, char *buf, size_t *i)
 {
 ssize_t r = 0;
-if (*s)
+if (*i)
 return (0);
 r = read(info->readfd, buf, READ_BUF_SIZE);
 if (r >= 0)
-*s = r;
+*i = r;
 return (r);
 }
 /**
- * _getline - gets next line from STDIN
+ * _getline - gets the next line of input from STDIN
  * @info: parameter struct
  * @ptr: address of pointer to buffer, preallocated or NULL
  * @length: size of preallocated ptr buffer if not NULL
@@ -118,7 +118,7 @@ return (-1);
 c = _strchr(buf + i, '\n');
 k = c ? 1 + (unsigned int)(c - buf) : len;
 new_p = _realloc(p, s, s ? s + k : k + 1);
-if (!new_p)
+if (!new_p) /* MALLOC FAILURE! */
 return (p ? free(p), -1 : -1);
 if (s)
 _strncat(new_p, buf + i, k - i);
@@ -134,7 +134,7 @@ return (s);
 }
 /**
  * sigintHandler - blocks ctrl-C
- * @sig_num: signal number
+ * @sig_num: the signal number
  * Return: void
  */
 void sigintHandler(__attribute__((unused))int sig_num)

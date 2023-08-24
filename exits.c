@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- **_strncpy - copy string
+ **_strncpy - copies a string
  *@dest: the destination string to be copied to
  *@src: the source string
  *@n: the amount of characters to be copied
@@ -29,8 +29,8 @@ return (s);
 }
 /**
  **_strncat - concatenates two strings
- *@dest: string1
- *@src: string2
+ *@dest: the first string
+ *@src: the second string
  *@n: the amount of bytes to be maximally used
  *Return: the concatenated string
  */
@@ -66,3 +66,4 @@ return (s);
 } while (*s++ != '\0');
 return (NULL);
 }
+
