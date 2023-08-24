@@ -1,15 +1,15 @@
 #include "shell.h"
 /**
-* list_len - determines length of linked list
- * @f: pointer to first node
+ * list_len - determines length of linked list
+ * @h: pointer to first node
  * Return: size of list
  */
-size_t list_len(const list_t *f)
+size_t list_len(const list_t *h)
 {
 size_t i = 0;
-while (f)
+while (h)
 {
-f = f->next;
+h = h->next;
 i++;
 }
 return (i);
@@ -71,7 +71,7 @@ return (i);
  * @node: pointer to list head
  * @prefix: string to match
  * @c: the next character after prefix to match
-* Return: match node or null
+ * Return: match node or null
  */
 list_t *node_starts_with(list_t *node, char *prefix, char c)
 {
