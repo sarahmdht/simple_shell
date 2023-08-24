@@ -70,7 +70,8 @@ typedef struct liststr
  *@readfd: the fd from which to read line input
  *@histcount: the history line number count
  */
-typedef struct passinfo {
+typedef struct passinfo
+{
 	char *arg;
 	char **argv;
 	char *path;
@@ -99,7 +100,8 @@ info_t;
  *@type: builtin command flag
  *@func: function
  */
-typedef struct builtin {
+typedef struct builtin
+{
 	char *type;
 	int (*func)(info_t *);
 }

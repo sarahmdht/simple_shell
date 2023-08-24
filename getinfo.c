@@ -21,7 +21,7 @@ int i = 0;
 add->fname = av[0];
 if (add->arg)
 {
- add->argv = strtow(add->arg, " \t");
+add->argv = strtow(add->arg, " \t");
 if (!add->argv)
 {
 add->argv = malloc(sizeof(char *) * 2);
@@ -31,7 +31,7 @@ add->argv[0] = _strdup(add->arg);
 add->argv[1] = NULL;
 }
 }
-for (i = 0; add->argv && add->argv[i]; i++);
+for (i = 0; add->argv && add->argv[i]; i++)
 add->argc = i;
 replace_alias(add);
 replace_vars(add);

@@ -10,7 +10,7 @@ int i = 0;
 unsigned long int result = 0;
 if (*s == '+')
 s++;
- for (i = 0;  s[i] != '\0'; i++)
+for (i = 0;  s[i] != '\0'; i++)
 {
 if (s[i] >= '0' && s[i] <= '9')
 {
@@ -97,8 +97,7 @@ sign = '-';
 array = flags & CONVERT_LOWERCASE ? "0123456789abcdef" : "0123456789ABCDEF";
 ptr = &buffer[49];
 *ptr = '\0';
-do
-{
+do {
 *--ptr = array[n % base];
 n /= base;
 } while (n != 0);

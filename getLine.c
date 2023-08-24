@@ -53,9 +53,10 @@ _putchar(BUF_FLUSH);
 r = input_buf(info, &buf, &len);
 if (r == -1)
 return (-1);
-if (len) {
-j = i; 
-p = buf + i; 
+if (len)
+{
+j = i;
+p = buf + i;
 check_chain(info, buf, &j, i, len);
 while (j < len)
 {
@@ -64,7 +65,7 @@ break;
 j++;
 }
 i = j + 1;
-if (i >= len) 
+if (i >= len)
 {
 i = len = 0;
 info->cmd_buf_type = CMD_NORM;
